@@ -60,13 +60,13 @@ class ControllerProduct {
       if (req.query.price) {
         option.where = {
           isDeleted: false,
-          price: { [Op.iLike]: `%${req.query.price}%` },
+          price: req.query.price ,
         };
       }
       if (req.query.stock) {
         option.where = {
           isDeleted: false,
-          stock: { [Op.iLike]: `%${req.query.stock}%` },
+          stock:  req.query.stock ,
         };
       }
       if (req.query.deskripsi) {
